@@ -1,12 +1,12 @@
 package com.flipperch.product_backend.models;
 
 public class Category {
-    
-    //Atributos
+
+    // Atributos
     private int id;
     private String name;
 
-    //Métodos construtores
+    // Métodos construtores
     public Category(int id, String name) {
         this.id = id;
         this.name = name;
@@ -15,16 +15,19 @@ public class Category {
     public Category() {
     }
 
-    //Métodos
+    // Métodos
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }

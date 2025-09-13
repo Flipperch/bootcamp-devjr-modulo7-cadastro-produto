@@ -1,8 +1,8 @@
 package com.flipperch.product_backend.models;
 
 public class Product {
-    
-    //Atributos
+
+    // Atributos
     private int id;
     private String name;
     private String description;
@@ -11,9 +11,10 @@ public class Product {
     private boolean newProduct; // Indica se o produto é um lançamento
     private int categoryId; // Categoria do produto
 
-    //Métodos construtores
+    // Métodos construtores
 
-    public Product(int id, String name, String description, double price, boolean promotional, boolean newProduct, int categoryId) {
+    public Product(int id, String name, String description, double price, boolean promotional, boolean newProduct,
+            int categoryId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -32,46 +33,59 @@ public class Product {
     public Product() {
     }
 
-    //Métodos
+    // Métodos
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
-    }    
+    }
+
     public boolean getPromotional() {
         return promotional;
     }
+
     public void setPromotional(boolean promotional) {
         this.promotional = promotional;
     }
+
     public boolean getNewProduct() {
         return newProduct;
     }
+
     public void setNewProduct(boolean newProduct) {
         this.newProduct = newProduct;
     }
+
     public int getCategoryId() {
         return categoryId;
     }
+
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }

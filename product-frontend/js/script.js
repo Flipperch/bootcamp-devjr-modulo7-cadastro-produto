@@ -23,8 +23,8 @@ function loadCategories() {
         async: false,
         success: (response) => {
             categories = response;
-            for (var cat of categories) {
-                document.getElementById("selectCategory").innerHTML += `<option value=${cat.id}>${cat.name}</option>`;
+            for (var category of categories) {
+                document.getElementById("selectCategory").innerHTML += `<option value=${category.id}>${category.name}</option>`;
             }
         }
     });
@@ -34,8 +34,8 @@ function loadCategories() {
 function loadProducts() {
     $.getJSON("http://localhost:8080/products", (response) => {
         products = response;
-        for (let prod of products) {
-            addNewRow(prod);
+        for (let product of products) {
+            addNewRow(product);
         }
     });
 }
@@ -47,8 +47,8 @@ function save() {
         name: document.getElementById("inputName").value,
         description: document.getElementById("inputDescription").value,
         price: convertToNumber(document.getElementById("inputPrice").value),
-        idCategory: document.getElementById("selectCategory").value,
-        promotion: document.getElementById("checkBoxPromotion").checked,
+        categoryId: document.getElementById("selectCategory").value,
+        promotional: document.getElementById("checkBoxPromotional").checked,
         newProduct: document.getElementById("checkBoxNewProduct").checked
     };
 
@@ -95,12 +95,12 @@ function addNewRow(product) {
     newRow.insertCell().appendChild(priceNode);
 
     //Insert product category
-    var categoryNode = document.createTextNode(categories[product.idCategory - 1].name);
+    var categoryNode = document.createTextNode(categories[product.categoryId - 1].name);
     newRow.insertCell().appendChild(categoryNode);
 
     //Insert product options
     var options = "";
-    if (product.promotion) {
+    if (product.promotional) {
         options = "<span class='badge bg-success me-1'>P</span>";
     }
 
